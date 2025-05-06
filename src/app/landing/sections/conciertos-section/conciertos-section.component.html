@@ -1,0 +1,27 @@
+<div
+class="bg-[url('/assets/fondo.png')] bg-cover bg-center relative py-8 text-center text-white w-auto h-[477px] mx-auto rounded-md shadow-lg"
+
+>
+  <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-70 rounded-md"></div>
+  <div class="relative z-10">
+    <h1 class="text-3xl font-bold mb-2">{{ tituloPrincipal }}</h1>
+    <p class="text-lg">{{ subtituloPrincipal }}</p>
+  </div>
+</div>
+
+
+<div class="h-max bg-black text-center">
+  <div class="bg-black py-8">
+    <div class="container mx-auto text-center">
+      <h2 class="text-2xl font-bold text-orange-500 mb-6">{{ tituloRelevantes }}</h2>
+      <div class="grid grid-cols-4 grid-rows-3 gap-4 h-auto mx-auto max-w-6xl">
+        <div *ngFor="let evento of eventosRelevantes" [ngClass]="evento.gridClasses"
+             class="bg-white rounded-4xl shadow-md overflow-hidden cursor-pointer transition-transform transform hover:scale-105 duration-300">
+          <a [routerLink]="['/sections/conciertos/', evento.id]">
+             <img [src]="evento.imagen" [alt]="evento.nombre" class="w-full h-full object-cover rounded-4xl" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
